@@ -165,7 +165,7 @@ Function Get-VssWriters {
         # Write an event if the service restart didn't solve the issue.  
         if ($CompareWriters){
             try {New-EventLog –LogName Application –Source “Get-Vsswriters -Restart”}
-            catch {Write-Warning -Message "Souce already exists."}
+            catch {Write-Warning -Message "Source already exists."}
             Write-EventLog -LogName "Application" -Source "Get-Vsswriters -Restart" -EventID 3201 -EntryType Warning -Message "One or more vss writers do not work properly. Restarting the service(s) did not solve the problem. Advice: Reboot the system." 
         }
 
